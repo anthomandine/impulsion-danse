@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impulsion Danse – Spectacle 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Sora:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #09090c;
+    --midnight: #101924;
+    --petrol: #173d4b;
+    --teal-deep: #1f6975;
+    --aqua: #62d8de;
+    --cyan: #22b6ec;
+    --coral: #f18c67;
+    --coral-deep: #eb6a49;
+    --peach: #ffd1b2;
+    --paper: #fffaf4;
+    --mist: #edf8f9;
+    --panel: rgba(255, 255, 255, 0.82);
+    --panel-strong: rgba(255, 255, 255, 0.92);
+    --line: rgba(20, 72, 85, 0.14);
+    --text: #18242c;
+    --text-soft: #5b6970;
+    --white: #ffffff;
+    --shadow: 0 24px 60px rgba(9, 9, 12, 0.12);
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(97, 216, 222, 0.16), transparent 28%),
+      radial-gradient(circle at top right, rgba(241, 140, 103, 0.12), transparent 24%),
+      linear-gradient(180deg, #fffdf9 0%, var(--paper) 55%, #f8f4ed 100%);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  img { max-width: 100%; height: auto; display: block; }
+
+  .cover-title,
+  .program-header h2,
+  .program-part-title,
+  .thanks-closing strong {
+    font-family: 'Fugaz One', 'Trebuchet MS', sans-serif;
+  }
+
+  /* ========== COVER ========== */
+  .cover {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 20% 25%, rgba(98, 216, 222, 0.18), transparent 22%),
+      radial-gradient(circle at 82% 18%, rgba(241, 140, 103, 0.22), transparent 22%),
+      radial-gradient(circle at 75% 76%, rgba(34, 182, 236, 0.18), transparent 18%),
+      linear-gradient(150deg, #07090d 0%, #12202a 32%, #0f1820 68%, #090a0d 100%);
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 2rem;
+    border: 1px solid rgba(255, 209, 178, 0.16);
+    border-radius: 32px;
+    pointer-events: none;
+  }
+
+  .cover-pattern {
+    position: absolute;
+    inset: -15%;
+    opacity: 0.5;
+    background-image:
+      radial-gradient(circle at 18% 30%, rgba(98, 216, 222, 0.16) 0 3%, transparent 3.5%),
+      radial-gradient(circle at 27% 72%, rgba(34, 182, 236, 0.18) 0 2.2%, transparent 2.8%),
+      radial-gradient(circle at 76% 28%, rgba(241, 140, 103, 0.18) 0 2.7%, transparent 3.3%),
+      radial-gradient(circle at 82% 76%, rgba(255, 209, 178, 0.12) 0 3.5%, transparent 4.2%);
+    pointer-events: none;
+  }
+
+  .cover-ecusson {
+    position: absolute;
+    width: 130px;
+    opacity: 0.08;
+    pointer-events: none;
+    filter: saturate(0) brightness(1.4);
+  }
+
+  .cover-ecusson--tl { top: 5%; left: 4%; }
+  .cover-ecusson--br { right: 4%; bottom: 5%; transform: scaleX(-1); }
+
+  .cover-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    padding: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    background: linear-gradient(180deg, rgba(8, 13, 18, 0.78), rgba(8, 13, 18, 0.58));
+    border: 1px solid rgba(255, 209, 178, 0.18);
+    border-radius: 28px;
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(8px);
+  }
+
+  .cover-logo {
+    width: min(340px, 72vw);
+    margin: 0 auto 2.25rem;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 209, 178, 0.22);
+    box-shadow:
+      0 0 0 1px rgba(98, 216, 222, 0.08),
+      0 18px 45px rgba(0, 0, 0, 0.3);
+    filter: saturate(1.04);
+  }
+
+  .cover-divider {
+    width: 110px;
+    height: 4px;
+    margin: 0 auto 1.75rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--cyan), var(--aqua) 38%, var(--coral) 72%, var(--coral-deep));
+    box-shadow: 0 0 24px rgba(34, 182, 236, 0.24);
+  }
+
+  .cover-label {
+    margin-bottom: 0.85rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: rgba(255, 250, 244, 0.72);
+  }
+
+  .cover-title {
+    margin-bottom: 0.65rem;
+    font-size: clamp(3rem, 8vw, 5.4rem);
+    line-height: 0.98;
+    letter-spacing: 0.03em;
+    color: var(--coral);
+    text-transform: uppercase;
+    text-shadow:
+      0 2px 0 rgba(0, 0, 0, 0.35),
+      0 10px 30px rgba(235, 106, 73, 0.18);
+  }
+
+  .cover-title em {
+    font-style: normal;
+    color: var(--aqua);
+  }
+
+  .cover-subtitle {
+    margin-bottom: 2.15rem;
+    font-size: clamp(0.88rem, 2vw, 1.08rem);
+    font-weight: 500;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: rgba(255, 250, 244, 0.56);
+  }
+
+  .cover-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(98, 216, 222, 0.34);
+    background: linear-gradient(90deg, rgba(98, 216, 222, 0.08), rgba(241, 140, 103, 0.1));
+    color: var(--peach);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .cover-date::before,
+  .cover-date::after {
+    content: '';
+    width: 22px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--aqua), var(--coral));
+    opacity: 0.75;
+  }
+
+  /* ========== REMERCIEMENTS ========== */
+  .thanks-section {
+    position: relative;
+    padding: 5rem 2rem;
+    background:
+      linear-gradient(180deg, rgba(98, 216, 222, 0.06), transparent 18%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 250, 244, 0.96));
+  }
+
+  .thanks-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--aqua), var(--coral), var(--cyan));
+    box-shadow: 0 4px 18px rgba(34, 182, 236, 0.18);
+  }
+
+  .thanks-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .thanks-ecusson {
+    width: 66px;
+    margin: 0 auto 1.4rem;
+    opacity: 0.36;
+    filter: drop-shadow(0 6px 16px rgba(34, 182, 236, 0.12));
+  }
+
+  .thanks-intro {
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: clamp(1.12rem, 2vw, 1.34rem);
+    line-height: 1.85;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .thanks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.35rem;
+  }
+
+  .thanks-item {
+    position: relative;
+    text-align: center;
+    padding: 1.55rem 1.1rem 1.4rem;
+    border: 1px solid rgba(23, 61, 75, 0.08);
+    border-radius: 22px;
+    background: linear-gradient(180deg, var(--panel-strong), rgba(255, 255, 255, 0.78));
+    box-shadow: 0 18px 40px rgba(9, 9, 12, 0.06);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    overflow: hidden;
+  }
+
+  .thanks-item::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--aqua), var(--coral), var(--cyan));
+    opacity: 0.9;
+  }
+
+  .thanks-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 46px rgba(9, 9, 12, 0.1);
+    border-color: rgba(241, 140, 103, 0.18);
+  }
+
+  .thanks-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 0.9rem;
+    font-size: 1.45rem;
+    background: linear-gradient(135deg, rgba(98, 216, 222, 0.16), rgba(241, 140, 103, 0.18));
+    border-radius: 18px;
+  }
+
+  .thanks-item h3 {
+    margin-bottom: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--petrol);
+  }
+
+  .thanks-item p {
+    font-size: 0.82rem;
+    color: var(--text-soft);
+    line-height: 1.58;
+  }
+
+  .thanks-closing {
+    margin-top: 3.2rem;
+    padding-top: 2.2rem;
+    text-align: center;
+    border-top: 1px solid rgba(23, 61, 75, 0.12);
+  }
+
+  .thanks-closing p {
+    font-size: 1rem;
+    color: var(--text-soft);
+  }
+
+  .thanks-closing strong {
+    color: var(--coral-deep);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ========== PROGRAMME ========== */
+  .program {
+    position: relative;
+    padding: 0;
+    background:
+      radial-gradient(circle at 0% 22%, rgba(34, 182, 236, 0.08), transparent 24%),
+      radial-gradient(circle at 100% 74%, rgba(241, 140, 103, 0.1), transparent 28%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(248, 244, 237, 0.96));
+  }
+
+  .program-bg-ecusson {
+    position: absolute;
+    top: 48%;
+    right: -40px;
+    width: 320px;
+    transform: translateY(-50%);
+    opacity: 0.035;
+    pointer-events: none;
+    filter: saturate(0);
+  }
+
+  .program-header {
+    position: relative;
+    padding: 4.4rem 2rem 3rem;
+    text-align: center;
+  }
+
+  .program-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 110px;
+    height: 4px;
+    border-radius: 999px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--aqua), var(--coral), var(--cyan));
+  }
+
+  .program-header-icon {
+    width: 46px;
+    margin: 0 auto 1rem;
+    opacity: 0.36;
+  }
+
+  .program-header h2 {
+    margin-bottom: 0.45rem;
+    font-size: clamp(1.9rem, 4vw, 2.9rem);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--coral-deep);
+  }
+
+  .program-header p {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+  }
+
+  .program-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4.5rem;
+  }
+
+  .program-part {
+    position: relative;
+    padding: 1.5rem 1.2rem 1rem;
+    border: 1px solid rgba(23, 61, 75, 0.08);
+    border-radius: 28px;
+    background: linear-gradient(180deg, var(--panel-strong), rgba(255, 255, 255, 0.74));
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(6px);
+  }
+
+  .program-part-title {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(23, 61, 75, 0.12);
+    text-align: center;
+    font-size: 1.42rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--petrol);
+  }
+
+  .program-part-title .part-num {
+    display: inline-block;
+    margin-right: 0.55rem;
+    padding: 0.28rem 0.72rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--coral), var(--coral-deep));
+    color: var(--white);
+    font-family: 'Sora', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    vertical-align: middle;
+    box-shadow: 0 8px 18px rgba(235, 106, 73, 0.22);
+  }
+
+  .entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.72rem 0.2rem;
+    border-bottom: 1px solid rgba(23, 61, 75, 0.08);
+    transition: transform 0.18s ease, background 0.18s ease;
+  }
+
+  .entry:hover {
+    transform: translateX(3px);
+    background: rgba(98, 216, 222, 0.04);
+  }
+
+  .entry:last-child { border-bottom: none; }
+
+  .entry-interlude,
+  .entry-final {
+    margin-inline: -0.2rem;
+    padding: 0.82rem 0.95rem;
+    border-bottom: none;
+    border-radius: 18px;
+  }
+
+  .entry-interlude {
+    background: linear-gradient(135deg, rgba(98, 216, 222, 0.1), rgba(255, 255, 255, 0.82));
+    border-left: 4px solid var(--aqua);
+  }
+
+  .entry-interlude .entry-title {
+    color: var(--teal-deep);
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .entry-interlude .entry-number { color: var(--cyan); }
+
+  .entry-final {
+    margin-top: 0.8rem;
+    background:
+      radial-gradient(circle at 15% 50%, rgba(98, 216, 222, 0.16), transparent 30%),
+      linear-gradient(135deg, #091018, #142734 58%, #182c36 100%);
+    border: 1px solid rgba(98, 216, 222, 0.22);
+    box-shadow: 0 18px 34px rgba(9, 16, 24, 0.2);
+  }
+
+  .entry-final .entry-title {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .entry-final .entry-tag {
+    background: rgba(98, 216, 222, 0.9);
+    border-color: transparent;
+    color: var(--ink);
+  }
+
+  .entry-final .entry-number {
+    color: var(--coral);
+    font-size: 1rem;
+    opacity: 1;
+  }
+
+  .entry-number {
+    min-width: 2rem;
+    padding-top: 0.15rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--coral-deep);
+    font-feature-settings: 'tnum';
+    opacity: 0.8;
+  }
+
+  .entry-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .entry-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.42;
+  }
+
+  .entry-sub {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.36rem;
+    margin-top: 0.24rem;
+    font-size: 0.72rem;
+    color: var(--text-soft);
+  }
+
+  .entry-tag {
+    display: inline-block;
+    padding: 0.16rem 0.56rem;
+    border: 1px solid rgba(23, 61, 75, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--petrol);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .entry-duo .entry-tag {
+    background: rgba(241, 140, 103, 0.12);
+    border-color: rgba(241, 140, 103, 0.2);
+    color: var(--coral-deep);
+  }
+
+  .entry-interlude .entry-tag {
+    background: rgba(255, 255, 255, 0.46);
+    border-color: rgba(23, 61, 75, 0.08);
+    color: var(--text-soft);
+  }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 2rem;
+    text-align: center;
+    background:
+      linear-gradient(180deg, rgba(98, 216, 222, 0.08), transparent 30%),
+      linear-gradient(160deg, #0b0e13 0%, #101821 52%, #0a1016 100%);
+    color: rgba(255, 250, 244, 0.44);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    border-radius: 999px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--aqua), var(--coral), var(--cyan));
+  }
+
+  .footer span { color: var(--peach); }
+
+  .footer-ecusson {
+    width: 32px;
+    margin: 0 auto 1rem;
+    opacity: 0.18;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 800px) {
+    .program-columns {
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+      padding-top: 2.4rem;
+    }
+
+    .thanks-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cover-content { padding: 1.8rem; }
+    .cover-logo { width: min(280px, 74vw); }
+    .cover-ecusson { width: 88px; }
+  }
+
+  @media (max-width: 480px) {
+    .cover {
+      min-height: 86vh;
+      padding: 2.5rem 1rem;
+    }
+
+    .cover-content { border-radius: 22px; }
+    .cover-title { font-size: clamp(2.5rem, 16vw, 3.5rem); }
+    .cover-label,
+    .cover-subtitle,
+    .cover-date { letter-spacing: 0.16em; }
+
+    .thanks-section,
+    .program-header { padding-inline: 1.2rem; }
+
+    .thanks-grid { grid-template-columns: 1fr; }
+    .program-columns { padding: 2rem 1rem 3rem; }
+    .program-part { padding: 1.25rem 0.95rem 0.85rem; }
+    .cover-ecusson { display: none; }
+  }
+
+  /* ========== PRINT ========== */
+  @media print {
+    .cover {
+      min-height: auto;
+      padding: 2rem;
+      break-after: page;
+      background: #101821 !important;
+    }
+
+    .cover::before,
+    .cover-pattern,
+    .cover-ecusson,
+    .program-bg-ecusson { display: none; }
+
+    .cover-content {
+      background: rgba(8, 13, 18, 0.88) !important;
+      box-shadow: none;
+    }
+
+    .cover-title { font-size: 2.8rem; }
+    .program-columns { break-inside: avoid; }
+    .entry { break-inside: avoid; }
+
+    body {
+      background: #fff;
+      color: #000;
+    }
+
+    .thanks-section,
+    .program {
+      background: #fbf8f2 !important;
+    }
+
+    .thanks-item,
+    .program-part {
+      box-shadow: none;
+      border: 1px solid #d9d3c9;
+      background: #fff !important;
+    }
+
+    .entry-interlude {
+      border-left: 3px solid #6a8f96;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .entry-final {
+      background: #222 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== COVER ==================== -->
+<section class="cover">
+  <div class="cover-pattern"></div>
+
+  <img class="cover-ecusson cover-ecusson--tl" src="logo_ecusson.png" alt="" aria-hidden="true">
+  <img class="cover-ecusson cover-ecusson--br" src="logo_ecusson.png" alt="" aria-hidden="true">
+
+  <div class="cover-content">
+    <img class="cover-logo" src="logo_grd_format.jpg" alt="Impulsion Danse">
+
+    <div class="cover-divider"></div>
+
+    <p class="cover-label">Association Impulsion Danse</p>
+    <h1 class="cover-title">Impulsion <em>Danse</em></h1>
+    <p class="cover-subtitle">Spectacle de fin d'année</p>
+    <div class="cover-date">20 juin 2026</div>
+  </div>
+</section>
+
+<!-- ==================== REMERCIEMENTS ==================== -->
+<section class="thanks-section">
+  <div class="thanks-inner">
+    <img class="thanks-ecusson" src="logo_ecusson.png" alt="" aria-hidden="true">
+
+    <p class="thanks-intro">
+      Toute l'équipe d'Impulsion Danse tient à remercier chaleureusement
+      celles et ceux qui rendent ce spectacle possible.
+    </p>
+
+    <div class="thanks-grid">
+      <div class="thanks-item">
+        <div class="thanks-item-icon">🏛️</div>
+        <h3>Mairie de Saint-Martin-les-Eaux</h3>
+        <p>Merci pour votre accueil et votre soutien.</p>
+      </div>
+      <div class="thanks-item">
+        <div class="thanks-item-icon">💃</div>
+        <h3>Nos professeurs</h3>
+        <p>Pour leur passion et leur engagement tout au long de l'année.</p>
+      </div>
+      <div class="thanks-item">
+        <div class="thanks-item-icon">✨</div>
+        <h3>Nos élèves</h3>
+        <p>Pour leur travail, leur énergie et leur talent.</p>
+      </div>
+      <div class="thanks-item">
+        <div class="thanks-item-icon">👨‍👩‍👧‍👦</div>
+        <h3>Parents &amp; bénévoles</h3>
+        <p>Qui participent à l'organisation et à la réussite de ce spectacle.</p>
+      </div>
+      <div class="thanks-item">
+        <div class="thanks-item-icon">🎵</div>
+        <h3>DJ Pascal Animation</h3>
+        <p>Pour le son et les lumières.</p>
+      </div>
+      <div class="thanks-item">
+        <div class="thanks-item-icon">👏</div>
+        <h3>Notre public</h3>
+        <p>Pour votre présence et vos encouragements.</p>
+      </div>
+    </div>
+
+    <div class="thanks-closing">
+      <p>Votre présence fait vivre <strong>Impulsion Danse</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROGRAMME ==================== -->
+<section class="program">
+  <img class="program-bg-ecusson" src="logo_ecusson.png" alt="" aria-hidden="true">
+
+  <div class="program-header">
+    <img class="program-header-icon" src="logo_ecusson.png" alt="" aria-hidden="true">
+    <h2>Ordre de passage</h2>
+    <p>Spectacle 2026</p>
+  </div>
+
+  <div class="program-columns">
+
+    <!-- ===== PARTIE 1 ===== -->
+    <div class="program-part">
+      <h3 class="program-part-title"><span class="part-num">01</span> 1ʳᵉ Partie</h3>
+
+      <div class="entry entry-final">
+        <span class="entry-number">★</span>
+        <div class="entry-body">
+          <div class="entry-title">Entrée — The Greatest Showmen</div>
+          <div class="entry-sub"><span class="entry-tag">Tout le monde</span></div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <span class="entry-number">01</span>
+        <div class="entry-body">
+          <div class="entry-title">Bridget Jones</div>
+          <div class="entry-sub"><span class="entry-tag">Initiations</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">02</span>
+        <div class="entry-body">
+          <div class="entry-title">Wild Wild West</div>
+          <div class="entry-sub"><span class="entry-tag">Modern</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">03</span>
+        <div class="entry-body">
+          <div class="entry-title">Zootopie 1</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga Débutant</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude entry-duo">
+        <span class="entry-number">04</span>
+        <div class="entry-body">
+          <div class="entry-title">Duo Zoé &amp; Lyna</div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">05</span>
+        <div class="entry-body">
+          <div class="entry-title">Boreilly Ki Barfi</div>
+          <div class="entry-sub"><span class="entry-tag">Bollywood Ados</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">06</span>
+        <div class="entry-body">
+          <div class="entry-title">Kpop Demon Hunter</div>
+          <div class="entry-sub"><span class="entry-tag">Kpop 1</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">07</span>
+        <div class="entry-body">
+          <div class="entry-title">Stitch</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga Débutant</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">08</span>
+        <div class="entry-body">
+          <div class="entry-title">365J</div>
+          <div class="entry-sub"><span class="entry-tag">Heel's</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">09</span>
+        <div class="entry-body">
+          <div class="entry-title">Barbie</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga 2</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">10</span>
+        <div class="entry-body">
+          <div class="entry-title">One Piece</div>
+          <div class="entry-sub"><span class="entry-tag">Initiation</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">11</span>
+        <div class="entry-body">
+          <div class="entry-title">Ram Leela</div>
+          <div class="entry-sub"><span class="entry-tag">Bollywood Débutant</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">12</span>
+        <div class="entry-body">
+          <div class="entry-title">Les Bronzés à la Plage</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga Adultes</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">13</span>
+        <div class="entry-body">
+          <div class="entry-title">American Pie</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga 1 Vendredi</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">14</span>
+        <div class="entry-body">
+          <div class="entry-title">Bob l'Éponge</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga 1 Mercredi</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">15</span>
+        <div class="entry-body">
+          <div class="entry-title">N'oublie jamais</div>
+          <div class="entry-sub"><span class="entry-tag">Street Jazz</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">16</span>
+        <div class="entry-body">
+          <div class="entry-title">N'oublie jamais</div>
+          <div class="entry-sub"><span class="entry-tag">Modern Ados</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">17</span>
+        <div class="entry-body">
+          <div class="entry-title">Titanic</div>
+          <div class="entry-sub"><span class="entry-tag">Modern + Modern Inter</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">18</span>
+        <div class="entry-body">
+          <div class="entry-title">Le Parrain</div>
+          <div class="entry-sub"><span class="entry-tag">Kpop 2</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">19</span>
+        <div class="entry-body">
+          <div class="entry-title">Men in Black</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga Adultes</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">20</span>
+        <div class="entry-body">
+          <div class="entry-title">Sexy Dance</div>
+          <div class="entry-sub"><span class="entry-tag">Street Ados</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">21</span>
+        <div class="entry-body">
+          <div class="entry-title">Pulp Fiction</div>
+          <div class="entry-sub"><span class="entry-tag">Anne &amp; Marine</span></div>
+        </div>
+      </div>
+      <div class="entry entry-duo">
+        <span class="entry-number">22</span>
+        <div class="entry-body">
+          <div class="entry-title">Les Choristes</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga 1 Mercredi</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">23</span>
+        <div class="entry-body">
+          <div class="entry-title">Sister Act</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga 1 Mercredi + Adultes</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">24</span>
+        <div class="entry-body">
+          <div class="entry-title">Harriet</div>
+          <div class="entry-sub"><span class="entry-tag">Street Jazz + Modern Ados</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">25</span>
+        <div class="entry-body">
+          <div class="entry-title">Joker</div>
+          <div class="entry-sub"><span class="entry-tag">Modern Inter</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">26</span>
+        <div class="entry-body">
+          <div class="entry-title">Rocky</div>
+          <div class="entry-sub"><span class="entry-tag">François + Break</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PARTIE 2 ===== -->
+    <div class="program-part">
+      <h3 class="program-part-title"><span class="part-num">02</span> 2ᵉ Partie</h3>
+
+      <div class="entry entry-interlude">
+        <span class="entry-number">27</span>
+        <div class="entry-body">
+          <div class="entry-title">Mercredi Adams</div>
+          <div class="entry-sub"><span class="entry-tag">Street Ados</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">28</span>
+        <div class="entry-body">
+          <div class="entry-title">Kpop Demon Hunter</div>
+          <div class="entry-sub"><span class="entry-tag">Kpop 1</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">29</span>
+        <div class="entry-body">
+          <div class="entry-title">Sapphire</div>
+          <div class="entry-sub"><span class="entry-tag">Bollywood Adultes</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">30</span>
+        <div class="entry-body">
+          <div class="entry-title">Forest Gump</div>
+          <div class="entry-sub"><span class="entry-tag">Maïa &amp; son frère</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">31</span>
+        <div class="entry-body">
+          <div class="entry-title">I Robot</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga 1 Mercredi</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">32</span>
+        <div class="entry-body">
+          <div class="entry-title">Zootopie 2</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga Débutant</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">33</span>
+        <div class="entry-body">
+          <div class="entry-title">Michael Jackson</div>
+          <div class="entry-sub"><span class="entry-tag">Modern Ados</span></div>
+        </div>
+      </div>
+      <div class="entry entry-duo">
+        <span class="entry-number">34</span>
+        <div class="entry-body">
+          <div class="entry-title">La Bohème</div>
+          <div class="entry-sub"><span class="entry-tag">Trio — Léna, Mélinda &amp; Naïs</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">35</span>
+        <div class="entry-body">
+          <div class="entry-title">Kpop Demon Hunter</div>
+          <div class="entry-sub"><span class="entry-tag">Kpop 2</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">36</span>
+        <div class="entry-body">
+          <div class="entry-title">Sexy Dance</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga Adultes</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">37</span>
+        <div class="entry-body">
+          <div class="entry-title">Dilbar</div>
+          <div class="entry-sub"><span class="entry-tag">Bollywood Débutant</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">38</span>
+        <div class="entry-body">
+          <div class="entry-title">Harry Potter</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga 1 Vendredi</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">39</span>
+        <div class="entry-body">
+          <div class="entry-title">Footloose</div>
+          <div class="entry-sub"><span class="entry-tag">Street Ados</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">40</span>
+        <div class="entry-body">
+          <div class="entry-title">Pub Barbie</div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">41</span>
+        <div class="entry-body">
+          <div class="entry-title">Barbie</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga 2</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">42</span>
+        <div class="entry-body">
+          <div class="entry-title">Kpop Demon Hunter</div>
+          <div class="entry-sub"><span class="entry-tag">Modern Inter</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">43</span>
+        <div class="entry-body">
+          <div class="entry-title">50 Cent</div>
+          <div class="entry-sub"><span class="entry-tag">Street Jazz</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">44</span>
+        <div class="entry-body">
+          <div class="entry-title">Voltage</div>
+          <div class="entry-sub"><span class="entry-tag">Bollywood Ados</span></div>
+        </div>
+      </div>
+      <div class="entry entry-interlude">
+        <span class="entry-number">45</span>
+        <div class="entry-body">
+          <div class="entry-title">Astérix Mission Cléopâtre</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga Adultes</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">46</span>
+        <div class="entry-body">
+          <div class="entry-title">Slumdog Millionaire</div>
+          <div class="entry-sub"><span class="entry-tag">Heel's</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">47</span>
+        <div class="entry-body">
+          <div class="entry-title">American Pie</div>
+          <div class="entry-sub"><span class="entry-tag">Ragga 1 Vendredi</span></div>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="entry-number">48</span>
+        <div class="entry-body">
+          <div class="entry-title">Kabhi Khushi Kabhi Gham</div>
+          <div class="entry-sub"><span class="entry-tag">Bollywood Adultes</span></div>
+        </div>
+      </div>
+
+      <div class="entry entry-final">
+        <span class="entry-number">★</span>
+        <div class="entry-body">
+          <div class="entry-title">Final — Honey</div>
+          <div class="entry-sub"><span class="entry-tag">Tout le monde</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <img class="footer-ecusson" src="logo_ecusson.png" alt="" aria-hidden="true">
+  <p>Impulsion Danse — Spectacle 2026 — <span>Saint-Martin-les-Eaux</span></p>
+</footer>
+
+</body>
+</html>
