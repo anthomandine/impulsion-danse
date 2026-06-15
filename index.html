@@ -30,7 +30,11 @@
     --shadow: 0 24px 60px rgba(9, 9, 12, 0.12);
   }
 
-  html { font-size: 16px; scroll-behavior: smooth; }
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
 
   body {
     font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -41,6 +45,7 @@
       linear-gradient(180deg, #fffdf9 0%, var(--paper) 55%, #f8f4ed 100%);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    max-width: 100%;
     overflow-x: hidden;
   }
 
@@ -92,14 +97,14 @@
 
   .cover-ecusson {
     position: absolute;
-    width: 130px;
-    opacity: 0.08;
+    width: 180px;
+    opacity: 0.28;
     pointer-events: none;
-    filter: saturate(0) brightness(1.4);
+    filter: saturate(0.85) brightness(1.28) contrast(1.02) drop-shadow(0 0 30px rgba(98, 216, 222, 0.16));
   }
 
-  .cover-ecusson--tl { top: 5%; left: 4%; }
-  .cover-ecusson--br { right: 4%; bottom: 5%; transform: scaleX(-1); }
+  .cover-ecusson--tl { top: 3%; left: 2%; transform: rotate(-8deg); }
+  .cover-ecusson--br { right: 2%; bottom: 3%; transform: scaleX(-1) rotate(-8deg); }
 
   .cover-content {
     position: relative;
@@ -199,6 +204,7 @@
   .thanks-section {
     position: relative;
     padding: 5rem 2rem;
+    overflow: hidden;
     background:
       linear-gradient(180deg, rgba(98, 216, 222, 0.06), transparent 18%),
       linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 250, 244, 0.96));
@@ -223,10 +229,10 @@
   }
 
   .thanks-ecusson {
-    width: 66px;
-    margin: 0 auto 1.4rem;
-    opacity: 0.36;
-    filter: drop-shadow(0 6px 16px rgba(34, 182, 236, 0.12));
+    width: 88px;
+    margin: 0 auto 1.2rem;
+    opacity: 0.82;
+    filter: saturate(0.92) brightness(1.06) drop-shadow(0 10px 24px rgba(34, 182, 236, 0.16));
   }
 
   .thanks-intro {
@@ -321,6 +327,7 @@
   .program {
     position: relative;
     padding: 0;
+    overflow: hidden;
     background:
       radial-gradient(circle at 0% 22%, rgba(34, 182, 236, 0.08), transparent 24%),
       radial-gradient(circle at 100% 74%, rgba(241, 140, 103, 0.1), transparent 28%),
@@ -330,12 +337,12 @@
   .program-bg-ecusson {
     position: absolute;
     top: 48%;
-    right: -40px;
-    width: 320px;
-    transform: translateY(-50%);
-    opacity: 0.035;
+    right: 0;
+    width: 420px;
+    transform: translate(35%, -50%);
+    opacity: 0.16;
     pointer-events: none;
-    filter: saturate(0);
+    filter: saturate(0.74) brightness(1.08) contrast(1.02) drop-shadow(0 0 36px rgba(241, 140, 103, 0.1));
   }
 
   .program-header {
@@ -357,9 +364,10 @@
   }
 
   .program-header-icon {
-    width: 46px;
+    width: 62px;
     margin: 0 auto 1rem;
-    opacity: 0.36;
+    opacity: 0.86;
+    filter: saturate(0.94) brightness(1.05) drop-shadow(0 8px 18px rgba(34, 182, 236, 0.14));
   }
 
   .program-header h2 {
@@ -408,21 +416,6 @@
     color: var(--petrol);
   }
 
-  .program-part-title .part-num {
-    display: inline-block;
-    margin-right: 0.55rem;
-    padding: 0.28rem 0.72rem;
-    border-radius: 999px;
-    background: linear-gradient(135deg, var(--coral), var(--coral-deep));
-    color: var(--white);
-    font-family: 'Sora', sans-serif;
-    font-size: 0.58rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    vertical-align: middle;
-    box-shadow: 0 8px 18px rgba(235, 106, 73, 0.22);
-  }
-
   .entry {
     display: flex;
     align-items: flex-start;
@@ -448,8 +441,22 @@
   }
 
   .entry-interlude {
+    position: relative;
     background: linear-gradient(135deg, rgba(98, 216, 222, 0.1), rgba(255, 255, 255, 0.82));
     border-left: 4px solid var(--aqua);
+  }
+
+  .entry-interlude::after {
+    content: 'Petite interlude';
+    position: absolute;
+    top: 0.45rem;
+    right: 0.7rem;
+    font-size: 0.52rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(31, 105, 117, 0.5);
+    pointer-events: none;
   }
 
   .entry-interlude .entry-title {
@@ -532,12 +539,6 @@
     white-space: nowrap;
   }
 
-  .entry-duo .entry-tag {
-    background: rgba(241, 140, 103, 0.12);
-    border-color: rgba(241, 140, 103, 0.2);
-    color: var(--coral-deep);
-  }
-
   .entry-interlude .entry-tag {
     background: rgba(255, 255, 255, 0.46);
     border-color: rgba(23, 61, 75, 0.08);
@@ -573,9 +574,10 @@
   .footer span { color: var(--peach); }
 
   .footer-ecusson {
-    width: 32px;
+    width: 42px;
     margin: 0 auto 1rem;
-    opacity: 0.18;
+    opacity: 0.56;
+    filter: saturate(0.84) brightness(1.14) drop-shadow(0 0 14px rgba(241, 140, 103, 0.16));
   }
 
   /* ========== RESPONSIVE ========== */
@@ -592,7 +594,7 @@
 
     .cover-content { padding: 1.8rem; }
     .cover-logo { width: min(280px, 74vw); }
-    .cover-ecusson { width: 88px; }
+    .cover-ecusson { width: 120px; opacity: 0.24; }
   }
 
   @media (max-width: 480px) {
@@ -754,7 +756,7 @@
 
     <!-- ===== PARTIE 1 ===== -->
     <div class="program-part">
-      <h3 class="program-part-title"><span class="part-num">01</span> 1ʳᵉ Partie</h3>
+      <h3 class="program-part-title">1ʳᵉ Partie</h3>
 
       <div class="entry entry-final">
         <span class="entry-number">★</span>
@@ -949,7 +951,7 @@
 
     <!-- ===== PARTIE 2 ===== -->
     <div class="program-part">
-      <h3 class="program-part-title"><span class="part-num">02</span> 2ᵉ Partie</h3>
+      <h3 class="program-part-title">2ᵉ Partie</h3>
 
       <div class="entry entry-interlude">
         <span class="entry-number">27</span>
