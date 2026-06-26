@@ -203,7 +203,7 @@
   /* ========== REMERCIEMENTS ========== */
   .thanks-section {
     position: relative;
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
     overflow: hidden;
     background:
       linear-gradient(180deg, rgba(98, 216, 222, 0.06), transparent 18%),
@@ -321,6 +321,240 @@
     color: var(--coral-deep);
     letter-spacing: 0.04em;
     text-transform: uppercase;
+  }
+
+  .tombola-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) auto;
+    align-items: center;
+    gap: 1.35rem;
+    margin-top: 1.8rem;
+    padding: 1.45rem 1.45rem 1.5rem;
+    border: 1px solid rgba(23, 61, 75, 0.1);
+    border-radius: 26px;
+    background:
+      radial-gradient(circle at top left, rgba(98, 216, 222, 0.16), transparent 34%),
+      radial-gradient(circle at bottom right, rgba(241, 140, 103, 0.14), transparent 28%),
+      linear-gradient(180deg, var(--panel-strong), rgba(255, 255, 255, 0.78));
+    box-shadow: 0 20px 46px rgba(9, 9, 12, 0.08);
+    overflow: hidden;
+  }
+
+  .tombola-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--aqua), var(--coral), var(--cyan));
+    pointer-events: none;
+  }
+
+  .tombola-card::after {
+    content: '';
+    position: absolute;
+    inset: auto 1.4rem 1rem auto;
+    width: 90px;
+    height: 90px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(98, 216, 222, 0.12), rgba(241, 140, 103, 0.18));
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  .tombola-copy {
+    position: relative;
+    z-index: 1;
+  }
+
+  .tombola-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.55rem;
+    padding: 0.34rem 0.68rem;
+    border: 1px solid rgba(23, 61, 75, 0.1);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+  }
+
+  .tombola-card h3 {
+    max-width: 19ch;
+    margin-bottom: 0.4rem;
+    font-size: clamp(1.16rem, 2.5vw, 1.6rem);
+    line-height: 1.12;
+    color: var(--petrol);
+  }
+
+  .tombola-card p {
+    max-width: 56ch;
+    font-size: 0.88rem;
+    color: var(--text-soft);
+  }
+
+  .tombola-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    min-width: 210px;
+    padding: 0.92rem 1.2rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--coral), var(--coral-deep));
+    color: var(--white);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 16px 28px rgba(235, 106, 73, 0.24);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease, background 0.2s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tombola-link::after {
+    content: '↗';
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .tombola-link:hover,
+  .tombola-link:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 34px rgba(235, 106, 73, 0.3);
+    filter: saturate(1.04);
+  }
+
+  .tombola-link:focus-visible,
+  .tombola-popup-close:focus-visible,
+  .tombola-popup-backdrop:focus-visible {
+    outline: 2px solid rgba(34, 182, 236, 0.45);
+    outline-offset: 4px;
+  }
+
+  .tombola-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.22s ease, visibility 0.22s ease;
+  }
+
+  .tombola-popup:target {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .tombola-popup-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 13, 18, 0.76);
+    backdrop-filter: blur(7px);
+  }
+
+  .tombola-popup-panel {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    width: min(1100px, 100%);
+    max-height: calc(100dvh - 2rem);
+    padding: 0.95rem;
+    border: 1px solid rgba(255, 209, 178, 0.24);
+    border-radius: 28px;
+    background:
+      radial-gradient(circle at top left, rgba(98, 216, 222, 0.12), transparent 32%),
+      linear-gradient(180deg, rgba(11, 17, 24, 0.98), rgba(13, 22, 31, 0.96));
+    box-shadow: 0 34px 80px rgba(0, 0, 0, 0.42);
+    transform: translateY(12px) scale(0.98);
+    transition: transform 0.24s ease;
+    overflow: hidden;
+  }
+
+  .tombola-popup:target .tombola-popup-panel {
+    transform: translateY(0) scale(1);
+  }
+
+  .tombola-popup-close {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+    font-size: 1.55rem;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .tombola-popup-copy {
+    padding: 0.85rem 3.6rem 0.85rem 0.95rem;
+  }
+
+  .tombola-popup-copy p {
+    margin-bottom: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 209, 178, 0.74);
+  }
+
+  .tombola-popup-copy h3 {
+    margin-bottom: 0.25rem;
+    font-size: clamp(1.08rem, 2.5vw, 1.45rem);
+    line-height: 1.18;
+    color: var(--white);
+  }
+
+  .tombola-popup-copy span {
+    display: block;
+    max-width: 62ch;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: rgba(231, 238, 243, 0.74);
+  }
+
+  .tombola-popup-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    padding: 0.8rem;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 209, 178, 0.16);
+    background:
+      radial-gradient(circle at top, rgba(255, 209, 178, 0.08), transparent 34%),
+      rgba(255, 255, 255, 0.04);
+  }
+
+  .tombola-popup-image img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin: 0 auto;
   }
 
   /* ========== PROGRAMME ========== */
@@ -620,6 +854,84 @@
     .cover-content { padding: 1.8rem; }
     .cover-logo { width: min(280px, 74vw); }
     .cover-ecusson { width: 120px; opacity: 0.24; }
+
+    .tombola-card {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 1rem;
+      padding: 1.3rem 1.15rem 1.2rem;
+      border-radius: 24px;
+    }
+
+    .tombola-card h3,
+    .tombola-card p {
+      max-width: none;
+    }
+
+    .tombola-card::after {
+      width: 68px;
+      height: 68px;
+      inset: auto 1rem 0.85rem auto;
+    }
+
+    .tombola-eyebrow {
+      margin-bottom: 1.5rem;
+      padding: 0.32rem 0.58rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+    }
+
+    .tombola-card h3 {
+      max-width: none;
+      font-size: clamp(1.12rem, 4.2vw, 1.4rem);
+      line-height: 1.14;
+    }
+
+    .tombola-card p {
+      font-size: 0.86rem;
+      line-height: 1.52;
+    }
+
+    .tombola-link {
+      width: 100%;
+      min-width: 0;
+      padding: 0.9rem 1rem;
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      box-shadow: 0 14px 24px rgba(235, 106, 73, 0.24);
+    }
+
+    .tombola-popup {
+      align-items: flex-start;
+      padding: 0.55rem 0.7rem 0.7rem;
+    }
+
+    .tombola-popup-panel {
+      width: 100%;
+      max-height: calc(100dvh - 1.4rem);
+      padding: 0.7rem;
+      border-radius: 24px;
+    }
+
+    .tombola-popup-copy {
+      padding: 0.72rem 3rem 0.72rem 0.72rem;
+    }
+
+    .tombola-popup-copy h3 {
+      font-size: clamp(1rem, 3.7vw, 1.2rem);
+      line-height: 1.18;
+    }
+
+    .tombola-popup-copy span {
+      font-size: 0.83rem;
+      line-height: 1.4;
+    }
+
+    .tombola-popup-image {
+      min-height: 0;
+      padding: 0.55rem;
+      border-radius: 18px;
+    }
   }
 
   @media (max-width: 480px) {
@@ -641,6 +953,74 @@
     .program-columns { padding: 2rem 1rem 3rem; }
     .program-part { padding: 1.25rem 0.95rem 0.85rem; }
     .cover-ecusson { display: none; }
+    .tombola-card {
+      gap: 0.88rem;
+      margin-top: 3.45rem;
+      padding: 1.1rem 0.92rem 1rem;
+      border-radius: 22px;
+    }
+    .tombola-card::after {
+      width: 48px;
+      height: 48px;
+      inset: auto 0.75rem 0.7rem auto;
+    }
+    .tombola-eyebrow {
+      display: inline-flex;
+      max-width: 100%;
+      gap: 0.35rem;
+      margin-bottom: 1.55rem;
+      padding: 0.32rem 0.55rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+    }
+    .tombola-card h3 {
+      max-width: none;
+      margin-bottom: 0.38rem;
+      font-size: clamp(1.02rem, 5.8vw, 1.24rem);
+    }
+    .tombola-card p {
+      font-size: 0.84rem;
+      line-height: 1.42;
+    }
+    .tombola-link {
+      padding: 0.88rem 0.95rem;
+      font-size: 0.71rem;
+      letter-spacing: 0.08em;
+    }
+    .tombola-popup {
+      padding: 0.35rem 0.45rem 0.45rem;
+    }
+    .tombola-popup-panel {
+      max-height: calc(100dvh - 0.9rem);
+      padding: 0.5rem;
+      border-radius: 20px;
+    }
+    .tombola-popup-close {
+      top: 0.55rem;
+      right: 0.55rem;
+      width: 36px;
+      height: 36px;
+      font-size: 1.35rem;
+    }
+    .tombola-popup-copy {
+      padding: 0.58rem 2.5rem 0.58rem 0.42rem;
+    }
+    .tombola-popup-copy p {
+      margin-bottom: 0.22rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+    }
+    .tombola-popup-copy h3 {
+      font-size: 0.95rem;
+    }
+    .tombola-popup-copy span {
+      font-size: 0.78rem;
+      line-height: 1.32;
+    }
+    .tombola-popup-image {
+      padding: 0.32rem;
+      border-radius: 15px;
+    }
   }
 
   /* ========== PRINT ========== */
@@ -694,6 +1074,8 @@
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
+
+    .tombola-popup { display: none !important; }
   }
 </style>
 </head>
@@ -761,11 +1143,34 @@
       </div>
     </div>
 
-    <div class="thanks-closing">
+    <div class="thanks-closing" id="thanks-closing">
       <p>Votre présence fait vivre <strong>Impulsion Danse</strong>.</p>
+    </div>
+
+    <div class="tombola-card" id="tombola-card">
+      <div class="tombola-copy">
+        <p class="tombola-eyebrow">Tombola du spectacle</p>
+        <h3>Des lots a gagner, des surprises a decouvrir</h3>
+        <p>Jetez un oeil a l'affiche pour voir ce qui vous attend et laissez-vous tenter avant le tirage.</p>
+      </div>
+      <a class="tombola-link" href="#tombola-popup">Decouvrir la tombola</a>
     </div>
   </div>
 </section>
+
+<div id="tombola-popup" class="tombola-popup" aria-labelledby="tombola-popup-title">
+  <a class="tombola-popup-backdrop" href="#tombola-card" aria-label="Fermer la popup tombola"></a>
+  <div class="tombola-popup-panel" role="dialog" aria-modal="true">
+    <a class="tombola-popup-close" href="#tombola-card" aria-label="Fermer la popup">&times;</a>
+    <div class="tombola-popup-copy">
+      <h3 id="tombola-popup-title">Tombola Impulsion Danse</h3>
+      <span>Retrouvez l'affiche complete, les lots a ne pas manquer et toutes les informations en un clin d'oeil.</span>
+    </div>
+    <div class="tombola-popup-image">
+      <img src="1000009490.jpg" alt="Affiche de la tombola du spectacle Impulsion Danse">
+    </div>
+  </div>
+</div>
 
 <!-- ==================== PROGRAMME ==================== -->
 <section class="program">
