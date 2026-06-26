@@ -446,7 +446,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 1rem;
+    padding: 0;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -471,11 +471,11 @@
     z-index: 1;
     display: grid;
     grid-template-rows: auto minmax(0, 1fr);
-    width: min(1100px, 100%);
-    max-height: calc(100dvh - 2rem);
-    padding: 0.95rem;
-    border: 1px solid rgba(255, 209, 178, 0.24);
-    border-radius: 28px;
+    width: 100%;
+    height: 100dvh;
+    padding: 0;
+    border: none;
+    border-radius: 0;
     background:
       radial-gradient(circle at top left, rgba(98, 216, 222, 0.12), transparent 32%),
       linear-gradient(180deg, rgba(11, 17, 24, 0.98), rgba(13, 22, 31, 0.96));
@@ -491,15 +491,15 @@
 
   .tombola-popup-close {
     position: absolute;
-    top: 0.85rem;
-    right: 0.85rem;
+    top: 1rem;
+    right: 1rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.12);
     color: var(--white);
     font-size: 1.55rem;
     line-height: 1;
@@ -507,7 +507,8 @@
   }
 
   .tombola-popup-copy {
-    padding: 0.85rem 3.6rem 0.85rem 0.95rem;
+    padding: 1rem 4.4rem 0.45rem 1rem;
+    text-align: center;
   }
 
   .tombola-popup-copy p {
@@ -529,6 +530,7 @@
   .tombola-popup-copy span {
     display: block;
     max-width: 62ch;
+    margin: 0 auto;
     font-size: 0.88rem;
     line-height: 1.45;
     color: rgba(231, 238, 243, 0.74);
@@ -539,10 +541,10 @@
     align-items: center;
     justify-content: center;
     min-height: 0;
-    padding: 0.8rem;
-    border-radius: 22px;
+    padding: 0.75rem 1rem 1rem;
+    border-radius: 0;
     overflow: hidden;
-    border: 1px solid rgba(255, 209, 178, 0.16);
+    border: none;
     background:
       radial-gradient(circle at top, rgba(255, 209, 178, 0.08), transparent 34%),
       rgba(255, 255, 255, 0.04);
@@ -903,18 +905,19 @@
 
     .tombola-popup {
       align-items: flex-start;
-      padding: 0.55rem 0.7rem 0.7rem;
+      padding: 0;
     }
 
     .tombola-popup-panel {
       width: 100%;
-      max-height: calc(100dvh - 1.4rem);
-      padding: 0.7rem;
-      border-radius: 24px;
+      height: 100dvh;
+      max-height: none;
+      padding: 0;
+      border-radius: 0;
     }
 
     .tombola-popup-copy {
-      padding: 0.72rem 3rem 0.72rem 0.72rem;
+      padding: 0.8rem 3.4rem 0.35rem 0.8rem;
     }
 
     .tombola-popup-copy h3 {
@@ -929,8 +932,8 @@
 
     .tombola-popup-image {
       min-height: 0;
-      padding: 0.55rem;
-      border-radius: 18px;
+      padding: 0.55rem 0.8rem 0.8rem;
+      border-radius: 0;
     }
   }
 
@@ -988,22 +991,23 @@
       letter-spacing: 0.08em;
     }
     .tombola-popup {
-      padding: 0.35rem 0.45rem 0.45rem;
+      padding: 0;
     }
     .tombola-popup-panel {
-      max-height: calc(100dvh - 0.9rem);
-      padding: 0.5rem;
-      border-radius: 20px;
+      height: 100dvh;
+      max-height: none;
+      padding: 0;
+      border-radius: 0;
     }
     .tombola-popup-close {
-      top: 0.55rem;
-      right: 0.55rem;
-      width: 36px;
-      height: 36px;
+      top: 0.7rem;
+      right: 0.7rem;
+      width: 42px;
+      height: 42px;
       font-size: 1.35rem;
     }
     .tombola-popup-copy {
-      padding: 0.58rem 2.5rem 0.58rem 0.42rem;
+      padding: 0.72rem 3.1rem 0.22rem 0.72rem;
     }
     .tombola-popup-copy p {
       margin-bottom: 0.22rem;
@@ -1018,8 +1022,8 @@
       line-height: 1.32;
     }
     .tombola-popup-image {
-      padding: 0.32rem;
-      border-radius: 15px;
+      padding: 0.3rem 0.55rem 0.55rem;
+      border-radius: 0;
     }
   }
 
