@@ -10,6 +10,7 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
+    --promo-height: 46px;
     --ink: #09090c;
     --midnight: #101924;
     --petrol: #173d4b;
@@ -47,6 +48,7 @@
     -webkit-font-smoothing: antialiased;
     max-width: 100%;
     overflow-x: hidden;
+    padding-top: var(--promo-height);
   }
 
   img { max-width: 100%; height: auto; display: block; }
@@ -58,10 +60,65 @@
     font-family: 'Fugaz One', 'Trebuchet MS', sans-serif;
   }
 
+  .promo-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--promo-height);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--coral-deep), var(--coral), var(--cyan));
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 10px 26px rgba(9, 9, 12, 0.16);
+  }
+
+  .promo-banner-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    white-space: nowrap;
+    animation: promo-scroll 22s linear infinite;
+    will-change: transform;
+  }
+
+  .promo-banner-group {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .promo-banner-text {
+    flex: 0 0 auto;
+    padding-right: 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .promo-banner-text::after {
+    content: '•';
+    margin-inline: 2.4rem;
+    opacity: 0.85;
+  }
+
+  @keyframes promo-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .promo-banner-track { animation: none; }
+  }
+
   /* ========== COVER ========== */
   .cover {
     position: relative;
-    min-height: 100vh;
+    min-height: calc(100vh - var(--promo-height));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -938,6 +995,8 @@
   }
 
   @media (max-width: 480px) {
+    :root { --promo-height: 42px; }
+
     .cover {
       min-height: 86vh;
       padding: 2.5rem 1rem;
@@ -1029,6 +1088,8 @@
 
   /* ========== PRINT ========== */
   @media print {
+    .promo-banner { display: none !important; }
+
     .cover {
       min-height: auto;
       padding: 2rem;
@@ -1053,6 +1114,7 @@
     body {
       background: #fff;
       color: #000;
+      padding-top: 0;
     }
 
     .thanks-section,
@@ -1084,6 +1146,21 @@
 </style>
 </head>
 <body>
+
+<div class="promo-banner" aria-label="Information importante">
+  <div class="promo-banner-track">
+    <div class="promo-banner-group">
+      <span class="promo-banner-text">Tickets de tombola en vente à la buvette</span>
+      <span class="promo-banner-text" aria-hidden="true">Tickets de tombola en vente à la buvette</span>
+      <span class="promo-banner-text" aria-hidden="true">Tickets de tombola en vente à la buvette</span>
+    </div>
+    <div class="promo-banner-group" aria-hidden="true">
+      <span class="promo-banner-text">Tickets de tombola en vente à la buvette</span>
+      <span class="promo-banner-text">Tickets de tombola en vente à la buvette</span>
+      <span class="promo-banner-text">Tickets de tombola en vente à la buvette</span>
+    </div>
+  </div>
+</div>
 
 <!-- ==================== COVER ==================== -->
 <section class="cover">
